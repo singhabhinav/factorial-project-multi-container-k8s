@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: express-server
-          image: singhabhinav/factorial-project-express-server
+          image: singhabhinav/express-server-k8
           ports:
             - containerPort: 5000
           env:
