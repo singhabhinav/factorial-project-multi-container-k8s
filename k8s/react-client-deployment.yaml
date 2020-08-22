@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-client-deployment
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+          component: react-client
+    template:
+        metadata:
+            labels:
+                component: react-client
+        spec:
+            containers:
+                -  name: react-client
+                   image: singhabhinav/factorial-project-react-client 
+                   ports:
+                    - containerPort: 3000

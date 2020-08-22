@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-client-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: react-client # same as pod metadata in react-client-deployment.yaml
+  ports:
+    - port: 3000
+      targetPort: 3000
+      # Notice there is no nodePort property
