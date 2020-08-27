@@ -1,20 +1,20 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment # Deployment object
 metadata:
-  name: worker-deployment
-spec:
-  replicas: 1
+  name: worker-deployment # Name of the deployment
+spec: # Deployment configuration
+  replicas: 1 # Number of replicas (pods) of this deployment
   selector:
     matchLabels:
-      component: worker
-  template:
+      component: worker # set of pods this deployment is going to control
+  template: # Pod template
     metadata:
       labels:
-        component: worker
-    spec:
+        component: worker # Deployment will use component to identify which pods it has to manage. Pod's label
+    spec: # Specify all the different containers which are going to run inside this pod
       containers:
-        - name: worker
-          image: singhabhinav/factorial-project-worker
+        - name: worker # Name of the container
+          image: singhabhinav/factorial-project-worker-k8s:dev # Image using which the container will be created
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
