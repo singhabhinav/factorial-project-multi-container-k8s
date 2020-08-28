@@ -15,7 +15,7 @@ spec: # Deployment configuration
       containers:
         - name: worker # Name of the container
           image: singhabhinav/factorial-project-worker-k8s:dev # Image using which the container will be created
-          env:
+          env: # These environment variables will be passed to container when it will be created inside the pod
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
