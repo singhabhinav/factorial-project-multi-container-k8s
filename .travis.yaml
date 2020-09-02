@@ -4,10 +4,8 @@ services:
 
 env:
     global:
-        # Enviroment variable which holds the current git SHA
-        - GIT_SHA=$(git rev-parse HEAD)
-        # Do not ask for user input when installing google sdk
-        - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+        - GIT_SHA=$(git rev-parse HEAD) # Enviroment variable which holds the current git SHA
+        - CLOUDSDK_CORE_DISABLE_PROMPTS=1 # Do not ask for user input when installing google sdk
 
 before_install:
     # All this scripts will run inside travis
