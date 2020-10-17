@@ -64,7 +64,7 @@ class Factorial extends Component {
           <button>Submit</button>
         </form>
 
-        <h3>Input Numbers by Abhinav Latest : </h3>
+        <h3>Input Numbers by Abhinav Latest Oct 17 2020 : </h3>
         {this.renderSeenIndexes()}
 
         <h3>Results:</h3>
