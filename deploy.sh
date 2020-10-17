@@ -1,6 +1,7 @@
 ### Build images using production Dockerfile
 # Specify muliple tags
 
+GIT_SHA = $(git rev-parse HEAD)
 # Build react-client image
 docker build -t singhabhinav/factorial-project-react-client-k8s:latest -t singhabhinav/factorial-project-react-client-k8s:$GIT_SHA -f ./react-client/Dockerfile ./react-client
 
