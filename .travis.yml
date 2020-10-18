@@ -13,11 +13,11 @@ before_install:
     - curl https://sdk.cloud.google.com | bash > /dev/null;
     - source $HOME/google-cloud-sdk/path.bash.inc # Source the path.bash.inc
     - gcloud components update kubectl # Install/Update kubectl
-    - openssl aes-256-cbc -K $encrypted_0db39c654149_key -iv $encrypted_0db39c654149_iv -in facto-292811-a6e770948371.json.enc -out facto-292811-a6e770948371.json -d
-    - gcloud auth activate-service-account --key-file facto-292811-a6e770948371.json # Authenticate to Google cloud. Similar to AWS IAM user we will use service account in GCP. With authentication google-sdk can use our GCP account
-    - gcloud config set project facto-292811 # Your Project ID on GCP
-    - gcloud config set compute/zone us-central1-c # Find this information on your Kubernetes cluster page on GCP
-    - gcloud container clusters get-credentials cluster-1 # Name of your Kubernetes cluster
+    - openssl aes-256-cbc -K $encrypted_356d6ef83503_key -iv $encrypted_356d6ef83503_iv -in factorial-project-5fa4988e91fc.json.enc -out factorial-project-5fa4988e91fc.json -d
+    - gcloud auth activate-service-account --key-file factorial-project-5fa4988e91fc.json # Authenticate to Google cloud. Similar to AWS IAM user we will use service account in GCP. With authentication google-sdk can use our GCP account
+    - gcloud config set project factorial-project # Your Project ID on GCP
+    - gcloud config set compute/zone us-central1-c  # Find this information on your Kubernetes cluster page on GCP
+    - gcloud container clusters get-credentials factorial-project  # Name of your Kubernetes cluster
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin # Login to docker hub
     - docker build -t singhabhinav/factorial-project-react-client-k8s -f ./react-client/Dockerfile.dev ./react-client # Build the image to run unit test cases
 
